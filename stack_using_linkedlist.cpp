@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Node class for the linked list
 class node {
 public:
     int data;
@@ -12,15 +13,18 @@ public:
     }
 };
 
+// Stack class managing the linked list
 class stack {
 private:
     node *top;
 
 public:
+// Initialize an empty stack
     stack() {
         top = NULL;
     }
 
+    // Check if the stack is empty
     int empty() {
         if (top == NULL) {
             return 1;
@@ -29,12 +33,14 @@ public:
         }
     }
 
+    // Add a new element to the top
     void push(int x) {
         node *p = new node(x);
         p->next = top;
         top = p;
     }
 
+    // Remove and return the top element
     int pop(void) {
         int x = top->data;
         node *p = top;
@@ -43,10 +49,12 @@ public:
         return x;
     }
 
+    // View the top element without removing it
     int peek() {
         return top->data;
     }
 
+    // Print all elements from top to bottom
     void display() {
         node *q = top;
         while (q != NULL) {
