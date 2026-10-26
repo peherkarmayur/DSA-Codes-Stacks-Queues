@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int MAX = 5;
+const int MAX = 5; // Maximum capacity of the stack
 
 class Stack
 {
@@ -10,17 +10,20 @@ private:
     int top;
 
 public:
+// Initialize empty stack
     Stack()
     {
         top = -1;
     }
 
+    // Add an element to the top of the stack
     void push(int x)
     {
         top++;
         a[top] = x;
     }
 
+    // Remove and return the top element
     int pop(void)
     {
         int x = a[top];
@@ -28,11 +31,13 @@ public:
         return x;
     }
 
+    // View the top element without removing it
     int peek(void)
     {
         return a[top];
     }
 
+    // Check if the stack has reached its maximum capacity
     int full(void)
     {
         if (top == MAX - 1)
@@ -45,6 +50,7 @@ public:
         }
     }
 
+    // Check if the stack is completely empty
     int empty(void)
     {
         if (top == -1)
@@ -57,6 +63,7 @@ public:
         }
     }
 
+    // Print all elements from top to bottom
     void display(void)
     {
         for (int i = top; i >= 0; i--)
