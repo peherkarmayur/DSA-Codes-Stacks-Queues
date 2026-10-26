@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
 
+// Node class to represent each element in the linked list
 class node
 {
 public:
-    int data;
-    node *next;
+    int data; // Data stored in the node
+    node *next; // Pointer to the next node
 
+    // Constructor to initialize a new node
     node(int x)
     {
         data = x;
@@ -14,6 +16,7 @@ public:
     }
 };
 
+// Queue class managing the linked list
 class queue
 {
 private:
@@ -21,11 +24,13 @@ private:
     node *rear;
 
 public:
+// Constructor to initialize an empty queue
     queue()
     {
         front = rear = NULL;
     }
 
+    // Function to check if the queue is empty
     int empty(void)
     {
         if (front == NULL)
@@ -38,6 +43,7 @@ public:
         }
     }
 
+    // Function to return the front element without removing it
     int peek(void)
     {
         if (empty())
@@ -49,6 +55,7 @@ public:
         return front->data;
     }
 
+    // Function to add an element to the rear of the queue
     void enqueue(int x)
     {
         node *p = new node(x);
@@ -65,6 +72,7 @@ public:
         }
     }
 
+    // Function to remove and return the front element of the queue
     int dequeue(void)
     {
         if (empty())
@@ -88,6 +96,7 @@ public:
         return x;
     }
 
+    // Function to print all elements in the queue
     void display(void)
     {
         node *q = front;
